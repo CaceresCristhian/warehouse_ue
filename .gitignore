@@ -1,0 +1,41 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Raw / large archives
+IDEA15.5_Warehouse_Datasets/
+*.zip
+*.tar
+*.gz
+
+# LaTeX build artifacts and compiled PDFs in paper/
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.log
+paper/*.out
+paper/*.synctex.gz
+paper/main.pdf
+docs/*.aux
+docs/*.log
+docs/*.out
+docs/*.toc
+docs/*.synctex.gz
+
+# Credentials, secrets, and local environment files
+.env
+.env.*
+*.key
+*.pem
+*secret*
+*credential*
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

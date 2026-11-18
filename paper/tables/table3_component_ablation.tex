@@ -1,0 +1,20 @@
+\begin{table*}[t]
+\centering
+\caption{Component-by-Component Ablation Across \BenchmarkWaves~Waves ($P = 4$ Pickers, DaRA \CalibratedPickDwell\,s Empirical Dwell)}
+\label{tab:component_ablation}
+\footnotesize
+\resizebox{0.95\textwidth}{!}{
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Ablation Variant} & \textbf{Batching Logic} & \textbf{Routing Policy} & \textbf{Makespan (min)} & \textbf{Workload CV} & \textbf{Makespan $\Delta$ vs.\ Fair Base} \\
+\midrule
+0. Legacy Single-Picker FCFS (Audited) & FCFS (Greedy Fill, $P_{\text{eff}}=1$) & S-Shape & 11.74~$\pm$~2.39 & 1.732 & +61.6\% \\
+1. Fair Multi-Picker FCFS & Round-Robin ($P=4$) & S-Shape & 7.26~$\pm$~1.79 & 0.163 & --- (Baseline) \\
+2. Fair FCFS + Static TSP & Round-Robin ($P=4$) & Static 2-Opt TSP & 6.93~$\pm$~1.70 & 0.147 & -4.6\% \\
+3. Balanced Batching + Static TSP & LPT Unit Balancing ($C=27$) & Static 2-Opt TSP & 6.93~$\pm$~1.70 & 0.147 & -4.6\% \\
+4. Sector Clustering + Balanced Batching & 5-Zone Sector + LPT & Static 2-Opt TSP & 5.37~$\pm$~1.21 & 0.211 & -26.1\% \\
+\textbf{5. Full CAST-Wave (Proposed)} & \textbf{5-Zone Sector + LPT} & \textbf{Dynamic Congestion TSP ($\lambda=15$m)} & \textbf{5.32~$\pm$~1.18} & \textbf{0.212} & \textbf{-26.7\%} \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}

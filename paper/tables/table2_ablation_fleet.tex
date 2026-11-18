@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\caption{Fleet Scalability Ablation on \DenseWavesCount~Dense Operational Waves ($\approx \DenseMeanPicks$~Picks/Wave): Average Makespan (min)}
+\label{tab:fleet_ablation}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{ccccc}
+\toprule
+\textbf{Fleet Size ($P$)} & \textbf{FCFS + Static TSP} & \textbf{Sector + Static TSP} & \textbf{CAST-Wave} & \textbf{CAST $\Delta$ vs.\ FCFS} \\
+\midrule
+$P = 2$ & 15.25 & 13.38 & \textbf{13.32} & -12.6\% \\
+$P = 4$ & 11.26 & \textbf{8.47} & 8.48 & -24.7\% \\
+$P = 6$ & 9.71 & \textbf{6.90} & 7.09 & -27.0\% \\
+$P = 8$ & 8.50 & \textbf{6.26} & 6.37 & -25.1\% \\
+$P = 10$ & 7.85 & \textbf{5.42} & 5.67 & -27.7\% \\
+$P = 12$ & 7.01 & \textbf{5.13} & 5.43 & -22.6\% \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

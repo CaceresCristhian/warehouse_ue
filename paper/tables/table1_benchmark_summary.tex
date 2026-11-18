@@ -1,0 +1,18 @@
+\begin{table*}[t]
+\centering
+\caption{Performance Benchmark Across \BenchmarkWaves~Operational Waves (Fleet Size $P = 4$ Pickers, DaRA \CalibratedPickDwell\,s Empirical Dwell)}
+\label{tab:benchmark_summary}
+\footnotesize
+\resizebox{0.92\textwidth}{!}{%
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Method / Policy} & \textbf{Makespan (min)} & \textbf{Total Dist. (m)} & \textbf{Blocked Time (s)} & \textbf{Workload CV} & \textbf{Makespan $\Delta$ vs.\ Base} \\
+\midrule
+FCFS + S-Shape (Hall, 1993) & \SShapeMakespanMean~$\pm$~\SShapeMakespanStd & 830.3 & 404.2 & 0.163 & --- (Baseline) \\
+FCFS + Largest-Gap (Hall, 1993) & \LargestGapMakespanMean~$\pm$~\LargestGapMakespanStd & 831.1 & 406.7 & 0.163 & +0.4\% \\
+FCFS + Static TSP (2-Opt) & \StaticTSPMakespanMean~$\pm$~\StaticTSPMakespanStd & 807.7 & 380.0 & 0.147 & -4.6\% \\
+\textbf{CAST-Wave (Proposed)} & \textbf{\CASTWaveMakespanMean~$\pm$~\CASTWaveMakespanStd} & \textbf{624.8} & \textbf{158.6} & \textbf{0.212} & \textbf{-26.7\%} \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:radarDataset xmlns="http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements" xmlns:ns2="http://radar-service.eu/schemas/descriptive/radar/v09/radar-dataset">
+    <identifier identifierType="DOI">10.35097/mwsv59v8sk9sqaan</identifier>
+    <relatedIdentifiers>
+        <relatedIdentifier relatedIdentifierType="URL" relationType="IsIdenticalTo">https://publikationen.bibliothek.kit.edu/1000192445</relatedIdentifier>
+    </relatedIdentifiers>
+    <creators>
+        <creator>
+            <creatorName>Barlang, Maximilian</creatorName>
+            <givenName>Maximilian</givenName>
+            <familyName>Barlang</familyName>
+            <nameIdentifier schemeURI="http://orcid.org/" nameIdentifierScheme="ORCID">0009-0005-8081-4286</nameIdentifier>
+            <creatorAffiliation>Institut für Fördertechnik und Logistiksysteme (IFL), Karlsruher Institut für Technologie (KIT)</creatorAffiliation>
+        </creator>
+        <creator>
+            <creatorName>Lehmann, Timo</creatorName>
+            <givenName>Timo</givenName>
+            <familyName>Lehmann</familyName>
+            <nameIdentifier schemeURI="http://orcid.org/" nameIdentifierScheme="ORCID">0000-0002-3955-3089</nameIdentifier>
+            <creatorAffiliation>Institut für Fördertechnik und Logistiksysteme (IFL), Karlsruher Institut für Technologie (KIT)</creatorAffiliation>
+        </creator>
+        <creator>
+            <creatorName>Furmans, Kai</creatorName>
+            <givenName>Kai</givenName>
+            <familyName>Furmans</familyName>
+            <nameIdentifier schemeURI="http://orcid.org/" nameIdentifierScheme="ORCID">0000-0001-6009-5564</nameIdentifier>
+            <creatorAffiliation>Institut für Fördertechnik und Logistiksysteme (IFL), Karlsruher Institut für Technologie (KIT)</creatorAffiliation>
+        </creator>
+    </creators>
+    <title>Benchmark Instances for Manual Warehouse Order Picking</title>
+    <descriptions>
+        <description descriptionType="Abstract">Dieser Datensatz stellt eine umfangreiche Instanzsammlung für das Order-Picking-Problem in manuellen, rechteckigen Lägern bereit und dient insbesondere dem Vergleich von Routing- und Warteheuristiken. Abgebildet wird ein Lagerlayout mit parallelen Gassen, je einer Quergasse oben und unten sowie einem Depot in (0, 0). Jede Instanz umfasst einen Lagergraphen, eine Zuordnung von Artikeln zu Pickpositionen sowie einen Auftragsstrom mit praxisnahen Eigenschaften. Berücksichtigt werden unter anderem die Auftretenswahrscheinlichkeit von Artikeln pro Bestellung, Fälligkeitsdaten, Layoutparameter (Anzahl und Länge der Gassen), die Anzahl an Bestellungen pro Schicht, die Anzahl verschiedener Artikel pro Auftrag, die Volatilität im Bestellankunftsstrom sowie unterschiedliche Lagerstrategien.&#13;
+&#13;
+Der Datensatz besteht aus zwei komplementären Instanztypen: (i) einem One-Factor-at-a-Time-(OFAT)-Design, das auf einem Standardfall basiert und sieben einzelne Einflussfaktoren isoliert variiert (Artikelverteilung, Fälligkeit, Lagergeometrie, Anzahl Bestellungen pro Schicht, Anzahl Artikel pro Bestellung, Stochastizität im Bestellankunftsstrom, Lagerstrategie). Hier werden 32 Faktor­ausprägungen mit jeweils 100 Replikationen bereitgestellt. (ii) Einem Latin-Hypercube-Sampling-(LHS)-Design, das den mehrdimensionalen Parameterraum von Layoutlänge, Layoutbreite, Stochastizität im Bestellankunftsstrom, Anzahl der Bestellungen pro Schicht und Fälligkeit exploriert (100 Ausprägungen × 100 Replikationen), um Interaktionen zwischen den Faktoren abzubilden. Die Parameter sind synthetisch, aber auf Basis von Domänenwissen realitätsnah gewählt. Alle Instanzen werden im JSON-Format bereitgestellt und eignen sich zur Entwicklung, zum Vergleich und zur Reproduzierbarkeit von Lösungsverfahren für das Order-Picking-Problem in manuellen Lägern.</description>
+        <description descriptionType="Abstract">This dataset provides a comprehensive collection of instances for the order picking problem in manual rectangular warehouses and is designed primarily for benchmarking routing and waiting heuristics. The warehouse is modeled as a graph with parallel aisles, one cross aisle at the top and bottom, and a depot located at (0, 0). Each instance includes the warehouse layout, an article-to-location assignment, and an order arrival stream with practice-oriented characteristics. The dataset explicitly accounts for the probability of article occurrence per order, due dates, layout parameters (number and length of aisles), the number of orders per shift, the number of order lines per order, the volatility of the order arrival process, and different storage policies.&#13;
+&#13;
+Two complementary types of instances are provided: (i) a One-Factor-at-a-Time (OFAT) design based on a standard case, in which seven factors are varied independently (article distribution, due date, layout, number of orders per shift, number of articles per order, stochasticity of order arrivals, storage policy). This results in 32 factor settings with 100 replications each. (ii) A Latin Hypercube Sampling (LHS) design that explores the multidimensional parameter space defined by layout length, layout width, stochasticity, number of orders per shift, and due date (100 settings × 100 replications), capturing interactions between factors. All parameters are synthetic but chosen to be realistic based on domain knowledge. The instances are provided in JSON format and are suitable for the development, comparison, and reproducible evaluation of solution methods for the order picking problem in manual warehouses.</description>
+        <description descriptionType="TechnicalRemarks">Repository Structure&#13;
+&#13;
+Top-level folders:&#13;
+&#13;
+    Data_input/ – Static input data (warehouse layouts and storage assignments)&#13;
+    Orders/ – Order streams (instances) for different experimental settings&#13;
+    Results/ – Example/benchmark solutions for selected instances (for validation)&#13;
+&#13;
+Within Data_input/ and Orders/, data is split into two experimental designs:&#13;
+&#13;
+    OFAT/ – One-Factor-at-a-Time design&#13;
+    LHS/ – Latin Hypercube Sampling design&#13;
+&#13;
+    Orders/OFAT/Standard_case/ contains the baseline setting.&#13;
+    Each other folder under Orders/OFAT/ changes exactly one factor relative to the standard case.&#13;
+    Orders/LHS/ contains 100 parameter sets (Latin Hypercube Sampling), each with 100 replications.&#13;
+&#13;
+Warehouse Layouts&#13;
+Geometric and Logical Structure&#13;
+&#13;
+The warehouse is modeled as a rectangular layout with:&#13;
+&#13;
+    Parallel picking aisles&#13;
+    One cross aisle at the bottom and one at the top&#13;
+    A depot at coordinate (0, 0) (in abstract length units)&#13;
+&#13;
+Layouts are represented as NetworkX graphs stored as pickle files (*.pkl) in Data_input/.../Layout/.&#13;
+&#13;
+Storage assignments are stored as JSON files in Data_input/.../Storage_assignment/.&#13;
+&#13;
+Each file in Orders/ is a JSON file representing one replication (= one shift/day) for a given parameter setting.&#13;
+&#13;
+Top-level structure:&#13;
+&#13;
+    meta: metadata and configuration of the instance&#13;
+    orders: list of orders for this instance&#13;
+&#13;
+OFAT Design (One-Factor-at-a-Time)&#13;
+&#13;
+The OFAT design is organized in subfolders under Orders/OFAT/.&#13;
+Each folder modifies exactly one factor relative to the Standard_case/.&#13;
+&#13;
+Each OFAT subfolder contains:&#13;
+&#13;
+    A set of factor levels (e.g. multiple due date settings, layout variants, etc.).&#13;
+    For each factor level: 100 JSON instances (replications), each representing one shift.&#13;
+&#13;
+LHS Design (Latin Hypercube Sampling)&#13;
+&#13;
+The LHS design jointly varies multiple parameters instead of changing one factor at a time.&#13;
+&#13;
+Location: Orders/LHS/&#13;
+&#13;
+    Contains 100 different parameter sets (Latin Hypercube samples).&#13;
+    For each parameter set: 100 replications (instances).&#13;
+&#13;
+Results&#13;
+&#13;
+The Results/ folder contains example/benchmark solutions for selected instances, separated into OFAT and LHS.&#13;
+&#13;
+Abbreviations:&#13;
+OFAT: One factor at a time&#13;
+LHS: Latin Hypercube Sampling&#13;
+MOCT: Mean order completion time&#13;
+MLPI: Mean length per item &#13;
+TARD: Tardiness&#13;
+SSH: S-Shape Routing&#13;
+NNH: Nearest Neighbourhood Routing&#13;
+LAG: Largest Gap Routing&#13;
+RET: Return Routing&#13;
+W: Waiting for full batches&#13;
+WOC_x: Waiting Order Count (Waiting for x orders in batch before starting)&#13;
+SI: Start Immediately (no waiting)&#13;
+&#13;
+Please refer to the attached readme file for more details regarding implementation and data description.</description>
+    </descriptions>
+    <keywords>
+        <keyword keywordScheme="Other">Online Order Picking Problem</keyword>
+        <keyword keywordScheme="Other">Heuristics</keyword>
+        <keyword keywordScheme="Other">Warehouse</keyword>
+        <keyword keywordScheme="Other">Instance Set</keyword>
+        <keyword keywordScheme="Other">Routing</keyword>
+        <keyword keywordScheme="Other">Waiting</keyword>
+        <keyword keywordScheme="Other">Batching</keyword>
+    </keywords>
+    <publishers>
+        <publisher nameIdentifierScheme="ROR" schemeURI="https://ror.org/" nameIdentifier="https://ror.org/04t3en479">Karlsruhe Institute of Technology</publisher>
+    </publishers>
+    <productionYear>2025</productionYear>
+    <publicationYear>2026</publicationYear>
+    <subjectAreas>
+        <subjectArea>
+            <controlledSubjectAreaName>Engineering</controlledSubjectAreaName>
+        </subjectArea>
+    </subjectAreas>
+    <resource resourceType="Dataset"></resource>
+    <rights>
+        <controlledRights>CC BY 4.0 Attribution</controlledRights>
+    </rights>
+    <rightsHolders>
+        <rightsHolder nameIdentifierScheme="ORCID" schemeURI="https://orcid.org/" nameIdentifier="0009-0005-8081-4286">Barlang, Maximilian</rightsHolder>
+        <rightsHolder nameIdentifierScheme="ORCID" schemeURI="https://orcid.org/" nameIdentifier="0000-0002-3955-3089">Lehmann, Timo</rightsHolder>
+        <rightsHolder nameIdentifierScheme="ORCID" schemeURI="https://orcid.org/" nameIdentifier="0000-0001-6009-5564">Furmans, Kai</rightsHolder>
+    </rightsHolders>
+</ns2:radarDataset>

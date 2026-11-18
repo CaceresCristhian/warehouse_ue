@@ -1,0 +1,11 @@
+{
+  "dara_raw_rows": 540,
+  "dara_pick_rows_after_filter": 270,
+  "dara_pick_gaps_computed": 257,
+  "dara_gap_median_s": 36.0,
+  "dara_gap_mean_s": 54.0,
+  "dara_gap_p25_s": 26.0,
+  "dara_gap_p75_s": 59.0,
+  "dara_gap_max_s": 431.0,
+  "dara_timing_rows": 270
+}
